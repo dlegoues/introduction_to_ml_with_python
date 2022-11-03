@@ -21,7 +21,7 @@ Formule de la régression linéaire :
 
 Les coefficients w et b l'erreur quadratique moyenne (MSE).
 
-![MSE](https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.justintodata.com%2Fwp-content%2Fuploads%2F2020%2F05%2Fimage-7.png&imgrefurl=https%3A%2F%2Fwww.justintodata.com%2Flinear-regression-machine-learning-python-tutorial%2F&tbnid=no4DHhsM3-dYeM&vet=12ahUKEwiDlqm_y5L7AhVJVaQEHQ5NA2QQMygWegUIARDyAQ..i&docid=d_QDo8evOLOKSM&w=363&h=238&q=linear%20regression%20function&ved=2ahUKEwiDlqm_y5L7AhVJVaQEHQ5NA2QQMygWegUIARDyAQ "MSE")
+![MSE](https://www.justintodata.com/wp-content/uploads/2020/05/image-7.png "MSE")
 
 
 <pre><code>from sklearn.linear_model import LinearRegression
