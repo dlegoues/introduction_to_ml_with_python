@@ -10,6 +10,7 @@ clf = KNeighborsClassifier(n_neighbors=n_neighbors).fit(X, y)</code></pre>
 <pre><code>from sklearn.neighbors import KNeighborsRegressor
 reg = KNeighborsRegressor(n_neighbors=3)</code></pre>
 
+****************************************************************************************************
 
 <h1>Modèles linéaires</h1>
 
