@@ -70,6 +70,31 @@ En pratique, la régression ridge est généralement le premier choix à faire p
 
 De même, si vous voulez un modèle qui soit facile à interpréter, lasso fournit effectivement une solution bien mieux compréhensible du fait qu'elle ne sélectionne qu'un sous-ensemble des caractéristiques.
 
+****************************************************************************************************
+
+# Modèles linéaires pour la classification
+
+## Régression Logistique
+
+<pre><code>from sklearn.linear_model import LogisticRegression
+logreg = LogisticRegression().fit(X_train, y_train)</code></pre>
+
+## SVM (Support Vector Machine)
+
+<pre><code>from sklearn.svm import LinearSVC
+svm = LinearSVC().fit(X_train, y_train)</code></pre>
+
+Par défaut, ces modèles appliquent une régularisation L2.
+
+Pour LogisticRegression comme pour LinearSVC, il existe un paramètre d'équilibre, ou de compromis, qui détermine la force de la régularisation et qui est appelé c. Plus c est élevé, et moins il y a de régularisation. En d'autres termes, lorque vous utilisez une valeur élevée pour le paramètre C, LogisticRegression et LinearSVC essaient d'ajuster le jeu d'apprentissage le mieux possible, tandis qu'avec de petites valeurs de c, les modèles mettent l'accent sur le fait de trouver des coefficients (w) proches de zéro.
+
+## Comparaisons des méthodes
+
+Il existe de nombreux parallèles entre les modèles linéaires pour la classification binaire et pour la régression. Comme dans le cas de la régression, la principale différence entre les modèles est la paramètre penalty, qui influence la régularisation et l'utilisation par le modèle de l'ensemble des caractéristiques disponibles ou un sous-ensemble de celles-ci.
+
+****************************************************************************************************
+
+# Modèles linéaires pour la classification multiclasse
 
 # Annexes
 
