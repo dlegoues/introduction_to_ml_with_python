@@ -14,7 +14,7 @@ reg = KNeighborsRegressor(n_neighbors=3)</code></pre>
 
 ****************************************************************************************************
 
-# Modèles linéaires
+# Modèles linéaires pour la régression
 
 ## Régression linéaire (ou méthode des moindres carrés ordinaires)
 
@@ -40,3 +40,13 @@ Cette régularisation signifie que l'on restreint explicitement un modèle pour 
 
 <pre><code>from sklearn.linear_model import Ridge
 ridge = Ridge().fit(X_train, y_train)</code></pre>
+
+Le modèle Ridge établit un compromis entre la simplicité du modèle (coefficients proches ce zéro) et les performances sur le jeu d'appentissage. L'importance relative entre ces deux pôles, simplicité d'une part et performance de l'autre peut être spécifiée par l'utilisateur à l'aide du paramètre alpha. Par défault, alpha = 1.0. 
+
+Il n'y a cependant aucune raison pour que cela nous donne le meilleur compromis. La valeur optimale pour alpha dépend du jeu de données particulier que nous utilisons. 
+
+Augmenter alpha force les coefficients à se rapprocher davantage de zéro, ce qui fait décroite les performances sur le jeu d'apprentissage mais peut aider à obtenir une meilleure généralisation
+
+Abaisser la valeur d'alpha permet aux coefficients d'être moins restreints. Pour de très petites valeurs de ce paramètre, le modèle ressemble de plus en plus à une régression linéaire (les deux finissent par se confondre si alpha devient nul).
+
+<pre><code>ridge10 = Ridge(aplha=10).fit(X_train, y_train)</code></pre>
