@@ -62,6 +62,8 @@ lasso = Lasso().fit(X_train, y_train)</code></pre>
 
 Comme ridge, la régression lasso a également un paramètre de régularisation, alpha, qui contrôle l'impact de la méthode sur la valeur des coefficients. Un paramètre qui peut être modifié est celui du nombre maximum d'itérations, max_iter. Par défaut, max_iter = 1000.
 
+<pre><code>lasso001 = Lasso(alpha=0.01, max_iter=100000).fit(X_train, y_train)</code></pre>
+
 ## Comparaisons des méthodes
 
 En pratique, la régression ridge est généralement le premier choix à faire par rapport à lasso. Cependant, si vous avez une grande quantité de caractéristiques et que vous pensiez que quelques-unes seulement sont importantes, le modèle lasso pourrait être un meilleur choix.
@@ -71,6 +73,6 @@ De même, si vous voulez un modèle qui soit facile à interpréter, lasso fourn
 
 # Annexes
 
-[Regularisation L1 & L2] (https://inside-machinelearning.com/regularization-deep-learning/ "link to regularization L1 & L2")
+[Regularisation L1 & L2] (https://inside-machinelearning.com/regularization-deep-learning/)
 
-[Surappentissage et Regularisation] (https://bioinfo.iric.ca/fr/le-surapprentissage-et-la-regularisation/ "link to overfitting & regularization")
+[Surappentissage et Regularisation] (https://bioinfo.iric.ca/fr/le-surapprentissage-et-la-regularisation/)
