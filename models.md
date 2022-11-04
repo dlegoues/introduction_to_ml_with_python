@@ -50,3 +50,27 @@ Augmenter alpha force les coefficients à se rapprocher davantage de zéro, ce q
 Abaisser la valeur d'alpha permet aux coefficients d'être moins restreints. Pour de très petites valeurs de ce paramètre, le modèle ressemble de plus en plus à une régression linéaire (les deux finissent par se confondre si alpha devient nul).
 
 <pre><code>ridge10 = Ridge(aplha=10).fit(X_train, y_train)</code></pre>
+
+## Lasso
+
+Une alternative à ridge pour les régressions linéaires régularisées s'appelle Lasso (acronyme de Least Absolute Shrinkage and Selection Operator). Comme dans le cas de la régression ridge, la méthode lasso a pour but de contraindre les coefficients à se rapprocher de zéro, mais d'une manière un peu différente appelée régularisation L1 (en d'autres termes, elle pénalise la norme L1 du vecteur de pondération, c'est à dire la somme des valeurs absolues des coefficients au lieu de la moitié du carré de la norme L2).
+
+La conséquence de la régularisation L1 est que, lorsque vous utilisez la régression lasso, certains coefficients valent exactement zéro. Cela signifie que certaines caractéristiques sont totalement ignorées par le modèle. Cela peut être vu comme une forme de sélection automatique des caractéristiques. Le fait que certains coefficients soient nuls rend souvent un modèle plus facile à interpréter, et peut également réveler quelles sont les caractéristiques les plus importantes du modèle.
+
+<pre><code>from sklearn.linear_model import Lasso
+lasso = Lasso().fit(X_train, y_train)</code></pre>
+
+Comme ridge, la régression lasso a également un paramètre de régularisation, alpha, qui contrôle l'impact de la méthode sur la valeur des coefficients. Un paramètre qui peut être modifié est celui du nombre maximum d'itérations, max_iter. Par défaut, max_iter = 1000.
+
+## Comparaisons des méthodes
+
+En pratique, la régression ridge est généralement le premier choix à faire par rapport à lasso. Cependant, si vous avez une grande quantité de caractéristiques et que vous pensiez que quelques-unes seulement sont importantes, le modèle lasso pourrait être un meilleur choix.
+
+De même, si vous voulez un modèle qui soit facile à interpréter, lasso fournit effectivement une solution bien mieux compréhensible du fait qu'elle ne sélectionne qu'un sous-ensemble des caractéristiques.
+
+
+# Annexes
+
+[Regularisation L1 & L2] (https://inside-machinelearning.com/regularization-deep-learning/ "link to regularization L1 & L2")
+
+[Surappentissage et Regularisation] (https://bioinfo.iric.ca/fr/le-surapprentissage-et-la-regularisation/ "link to overfitting & regularization")
