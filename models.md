@@ -94,7 +94,9 @@ Il existe de nombreux parallèles entre les modèles linéaires pour la classifi
 
 ****************************************************************************************************
 
-# Modèles linéaires pour la classification multiclasse
+# Arbres de décision
+
+
 
 # Annexes
 
